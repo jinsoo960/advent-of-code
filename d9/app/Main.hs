@@ -11,9 +11,6 @@ getDiffs ls = if all (== 0) ls then [ls] else ls : getDiffs (getDiff ls)
 extrapolate :: [[Int]] -> Int
 extrapolate xss = sum (map head xss)
 
-extrapolate' :: [[Int]] -> Int
-extrapolate' = foldr ((-) . head) 0 
-
 main :: IO ()
 main = do
   f <- readFile "input"
